@@ -15,7 +15,7 @@ const HomePage: React.FC = () => {
   return (
     <>
       <div className='flex-col md:flex pt-26'>
-        <div className='flex flex-col items-center md:h-screen md:top-30 md:left-0 md:fixed w-full md:w-[40%]'>
+        <div className='flex flex-col items-center md:h-screen md:top-30 md:left-0 md:fixed w-full md:w-[40%] gap-2'>
           <div>
             <img
               src='/images/avatar.jpg'
@@ -29,51 +29,53 @@ const HomePage: React.FC = () => {
         </div>
 
         <div className='flex justify-center md:justify-start md:ml-[40%] w-full md:w-[60%] py-4 overflow-y-auto '>
-          <div className='w-[80%]'>
-            <h1 className='text-4xl'>Dolapo Ajala</h1>
-            <h2 className='text-2xl'>Frontend Developer</h2>
-            <nav className='mt-6'>
-              <ul className='flex gap-4'>
-                <a
-                  className='flex items-center gap-2 py-1 px-2 text-sm border border-gray-700 rounded-full'
-                  href='https://x.com/dp7954'
-                  target='_blank'
-                  rel='noopener noreferer'
-                >
-                  <FaTwitter size={18} />
-                  <p className='hidden md:block'>X</p>
-                </a>
-                <a
-                  className='flex items-center gap-2 py-1 px-2 text-sm border border-gray-700  rounded-full'
-                  href='https://github.com/Dydex'
-                  target='_blank'
-                  rel='noopener noreferer'
-                >
-                  <FaGithub size={18} />
-                  <p className='hidden md:block'>GitHub</p>
-                </a>
-                <a
-                  className='flex items-center gap-2 py-1 px-2 text-sm border border-gray-700 rounded-full'
-                  href='https://www.linkedin.com/in/ajala-dolapo-756394281/'
-                  target='_blank'
-                  rel='noopener noreferer'
-                >
-                  <FaLinkedin size={18} />
-                  <p className='hidden md:block'>LinkedIn</p>
-                </a>
-                <a
-                  className='flex items-center gap-2 py-1 px-2 text-sm border border-gray-700  rounded-full'
-                  href='https://gmail.google.com/gmail/?view=cm&fs=1&to=supremeajala@gmail.com'
-                  target='_blank'
-                  rel='noopener noreferer'
-                >
-                  <FaEnvelope size={18} />
-                  <p className='hidden md:block'>Gmail</p>
-                </a>
-              </ul>
-            </nav>
+          <div className='w-[95%] md:w-[80%]'>
+            <div className='flex flex-col items-center md:items-start '>
+              <h1 className='text-4xl'>Dolapo Ajala</h1>
+              <h2 className='text-2xl'>Frontend Developer</h2>
+              <nav className='mt-6'>
+                <ul className='flex gap-4'>
+                  <a
+                    className='flex items-center gap-2 py-1 px-2 text-sm border border-gray-700 rounded-full'
+                    href='https://x.com/dp7954'
+                    target='_blank'
+                    rel='noopener noreferer'
+                  >
+                    <FaTwitter size={18} />
+                    <p className='hidden md:block'>X</p>
+                  </a>
+                  <a
+                    className='flex items-center gap-2 py-1 px-2 text-sm border border-gray-700  rounded-full'
+                    href='https://github.com/Dydex'
+                    target='_blank'
+                    rel='noopener noreferer'
+                  >
+                    <FaGithub size={18} />
+                    <p className='hidden md:block'>GitHub</p>
+                  </a>
+                  <a
+                    className='flex items-center gap-2 py-1 px-2 text-sm border border-gray-700 rounded-full'
+                    href='https://www.linkedin.com/in/ajala-dolapo-756394281/'
+                    target='_blank'
+                    rel='noopener noreferer'
+                  >
+                    <FaLinkedin size={18} />
+                    <p className='hidden md:block'>LinkedIn</p>
+                  </a>
+                  <a
+                    className='flex items-center gap-2 py-1 px-2 text-sm border border-gray-700  rounded-full'
+                    href='https://gmail.google.com/gmail/?view=cm&fs=1&to=supremeajala@gmail.com'
+                    target='_blank'
+                    rel='noopener noreferer'
+                  >
+                    <FaEnvelope size={18} />
+                    <p className='hidden md:block'>Gmail</p>
+                  </a>
+                </ul>
+              </nav>
+            </div>
 
-            <p className='mt-10'>
+            <p className=' mt-10'>
               Dolapo is a frontend developer who loves building clean,
               intuitive, and interactive digital experiences. He blends design
               and technology to turn complex ideas into elegant, user-friendly
@@ -104,11 +106,11 @@ const HomePage: React.FC = () => {
             </div>
 
             <div className=' mt-8'>
-              <div>
+              <div className='flex justify-center md:justify-start'>
                 <h1 className='text-4xl'>Certifications</h1>
               </div>
 
-              <div className='flex justify-between mt-6'>
+              <div className='grid grid-cols-2 md:grid-cols-3 gap-4 mt-6'>
                 <div>
                   <h6 className='text-xl'>Alx Acacdemy</h6>
                   <p className='text-sm'>Intro to Software Engineering</p>
@@ -127,8 +129,8 @@ const HomePage: React.FC = () => {
             </div>
 
             <div className='mt-8'>
-              <div>
-                <h1 className='text-4xl '>Skills</h1>
+              <div className='flex justify-center md:justify-start'>
+                <h1 className='text-4xl '>My Tools </h1>
               </div>
               <div className='grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-2 mt-6'>
                 <div className='flex items-center gap-2'>
