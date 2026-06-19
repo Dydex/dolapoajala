@@ -6,7 +6,7 @@ export const PROJECTSAMPLE: CardProps[] = [
     description: `Web3Unilag is the official community platform for blockchain and crypto enthusiasts at the University of Lagos. The website showcases student testimonials, upcoming events, and curated learning resources all designed to inspire and educate members about Web3 technologies. It serves as a hub for collaboration, networking, and staying updated with the latest happenings in the decentralized ecosystem.`,
     image: "/images/web3unilag.png",
     title: "https://web3unilag.xyz",
-    tags: ["Next.js", "Tailwind CSS", "TypeScript", "Web3 Community"]
+    tags: ["Next.js", "Tailwind CSS", "TypeScript"]
   },
   {
     name: "Listing Website",
@@ -20,7 +20,7 @@ export const PROJECTSAMPLE: CardProps[] = [
     description: `Virtual Voter is an interactive app that allows users to create, share, and participate in polls in real-time. The app features an intuitive interface, instant vote tracking, and live result updates, making it easy for communities, teams, and social groups to gather opinions and make decisions quickly. Designed for engagement and simplicity, Virtual Voter helps users express their views, it is designed for engagement, simplicity and allows users stay connected through collaborative voting experiences.`,
     image: "/images/polling-app.png",
     title: "https://expo.dev/artifacts/eas/bpnKXW9rWRjXuu6mVrRbTt.apk",
-    tags: ["React Native", "Expo", "TypeScript", "Android APK"]
+    tags: ["React Native", "Expo", "TypeScript", "Supabase", "Android APK"]
   },
   {
     name: "Fed Vote",
