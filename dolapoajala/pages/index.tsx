@@ -24,10 +24,13 @@ import {
   SiSolidity,
   SiEthers,
   SiWalletconnect,
+  SiNodedotjs,
+  SiExpress,
   SiSupabase,
   SiGit,
   SiVercel,
   SiGithub,
+  SiPostman,
 } from "react-icons/si";
 import { TbBrandReactNative } from "react-icons/tb";
 
@@ -123,7 +126,7 @@ const HomePage: React.FC = () => {
                   Dolapo Ajala
                 </h1>
                 <p className="text-indigo-600 dark:text-indigo-400 font-semibold text-lg mt-1">
-                  Frontend & Blockchain Developer
+                  Software Developer
                 </p>
               </div>
 
@@ -138,7 +141,7 @@ const HomePage: React.FC = () => {
 
             {/* Brief bio/intro */}
             <p className="text-slate-600 dark:text-slate-300 text-sm leading-relaxed font-medium">
-              I am a Frontend and Blockchain Developer who builds clean, intuitive, and interactive digital experiences. I specialize in crafting modern web applications using React, Next.js, and TypeScript with a strong eye for design and user experience. On the blockchain side, I design and deploy secure smart contracts in Solidity, integrating them seamlessly with frontend interfaces using industry standard tools like Foundry and Hardhat. With advanced training from Web3Bridge, I have a deep understanding of contract architecture, gas optimization, and security best practices. Currently expanding into Rust, backend systems, and the growing intersection of AI and Web3 
+              I am a Software Developer who builds clean, intuitive, and interactive digital experiences across web, mobile, and on-chain. I craft modern applications using React, Next.js, React Native, and TypeScript with a strong eye for design and user experience, backed by REST APIs built on Node.js, Express, and PostgreSQL. On the blockchain side, I design and deploy secure smart contracts in Solidity, integrating them seamlessly with frontend interfaces using industry standard tools like Foundry and Hardhat. With advanced training from Web3Bridge, I have a deep understanding of contract architecture, gas optimization, and security best practices. Currently expanding into Rust and the growing intersection of AI and Web3.
             </p>
 
             {/* Social Links */}
@@ -274,6 +277,17 @@ const HomePage: React.FC = () => {
 
             <div className="relative border-l-2 border-slate-200 dark:border-slate-800 ml-3 md:ml-4 space-y-8 py-2">
               {[
+                {
+                  role: "Freelance Developer",
+                  company: "Mashanoch Private School",
+                  location: "Remote",
+                  date: "09/2026",
+                  bullets: [
+                    "Built a computer-based testing (CBT) platform with Next.js and TypeScript, allowing students to sit timed, automatically scored exams in the browser.",
+                    "Designed the exam, question, and result schema in Supabase (PostgreSQL) and used Supabase Auth to separate student and staff access.",
+                    "Worked directly with school staff as the sole developer, handling requirements, deployment, and iteration on their feedback."
+                  ]
+                },
                 {
                   role: "Open Source Contributor",
                   company: "Stellar Drips Wave",
@@ -447,6 +461,29 @@ const HomePage: React.FC = () => {
                 </div>
               </div>
 
+              {/* Backend Category */}
+              <div>
+                <h3 className="text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-3.5">Backend</h3>
+                <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-3">
+                  {[
+                    { name: "Node.js", icon: <SiNodedotjs className="text-green-600 text-2xl" />, hover: "group-hover:text-green-500" },
+                    { name: "Express", icon: <SiExpress className="text-slate-800 dark:text-white text-2xl" />, hover: "group-hover:text-black dark:group-hover:text-white" }
+                  ].map((skill) => (
+                    <div
+                      key={skill.name}
+                      className="flex items-center gap-3 p-3 rounded-xl bg-white/40 dark:bg-slate-900/40 border border-slate-200/50 dark:border-slate-800/50 hover:border-indigo-500/30 hover:bg-white dark:hover:bg-slate-900 transition-all duration-300 group cursor-pointer shadow-sm hover:shadow"
+                    >
+                      <div className="transition-transform duration-300 group-hover:scale-110">
+                        {skill.icon}
+                      </div>
+                      <span className={`text-slate-800 dark:text-slate-200 font-semibold text-sm transition-colors duration-200 ${skill.hover}`}>
+                        {skill.name}
+                      </span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+
               {/* Blockchain Category */}
               <div>
                 <h3 className="text-xs font-semibold text-slate-400 dark:text-slate-500 uppercase tracking-wider mb-3.5">Blockchain</h3>
@@ -502,7 +539,8 @@ const HomePage: React.FC = () => {
                     {[
                       { name: "Git", icon: <SiGit className="text-orange-600 text-2xl" />, hover: "group-hover:text-orange-500" },
                       { name: "GitHub", icon: <SiGithub className="text-slate-950 dark:text-white text-2xl" />, hover: "group-hover:text-black dark:group-hover:text-white" },
-                      { name: "Vercel", icon: <SiVercel className="text-slate-950 dark:text-white text-2xl" />, hover: "group-hover:text-black dark:group-hover:text-white" }
+                      { name: "Vercel", icon: <SiVercel className="text-slate-950 dark:text-white text-2xl" />, hover: "group-hover:text-black dark:group-hover:text-white" },
+                      { name: "Postman", icon: <SiPostman className="text-orange-500 text-2xl" />, hover: "group-hover:text-orange-500" }
                     ].map((skill) => (
                       <div
                         key={skill.name}
