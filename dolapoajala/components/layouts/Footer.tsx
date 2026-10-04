@@ -1,59 +1,55 @@
-import { FaTwitter, FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
+import Link from "next/link";
+import { EMAIL, SOCIALS } from "@/constants";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="w-full bg-white/40 dark:bg-slate-950/40 border-t border-slate-200/50 dark:border-slate-800/50 py-8 backdrop-blur-md">
-      <div className="max-w-7xl mx-auto px-4 flex flex-col md:flex-row items-center justify-between gap-4">
-        <p className="text-xs font-semibold text-slate-500 dark:text-slate-400">
-          &copy; {new Date().getFullYear()} Dolapo Ajala. All rights reserved.
-        </p>
+    <footer className="site-footer section-shell" aria-label="Site footer">
+      <div className="footer-top">
+        <div className="footer-intro">
+          <span className="footer-label">THANKS FOR STOPPING BY</span>
+          <p>
+            Clean code.
+            <br />
+            <em>Careful details.</em>
+          </p>
+          <span className="footer-location">SOFTWARE DEVELOPER · LAGOS, NIGERIA</span>
+        </div>
 
-        <ul className="flex gap-4 items-center">
-          <li>
-            <a
-              href="https://x.com/dp7954"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 inline-flex items-center justify-center rounded-lg border border-slate-200/60 dark:border-slate-800/60 text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:border-indigo-500/30 hover:bg-slate-50 dark:hover:bg-slate-900/40 transition-all duration-300"
-              aria-label="Twitter"
-            >
-              <FaTwitter size={15} />
+        <nav className="footer-links" aria-label="Footer navigation">
+          <span className="footer-label">TAKE ANOTHER LOOK</span>
+          <Link href="/#work">
+            Selected work <span aria-hidden="true">↗</span>
+          </Link>
+          <Link href="/projects">
+            All projects <span aria-hidden="true">↗</span>
+          </Link>
+          <Link href="/#experience">
+            Experience <span aria-hidden="true">↗</span>
+          </Link>
+          <Link href="/#contact">
+            Start a conversation <span aria-hidden="true">↗</span>
+          </Link>
+        </nav>
+
+        <div className="footer-socials">
+          <span className="footer-label">ELSEWHERE ON THE INTERNET</span>
+          {SOCIALS.map((social) => (
+            <a key={social.href} href={social.href} target="_blank" rel="noopener noreferrer">
+              {social.label} <span aria-hidden="true">↗</span>
             </a>
-          </li>
-          <li>
-            <a
-              href="https://github.com/Dydex"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 inline-flex items-center justify-center rounded-lg border border-slate-200/60 dark:border-slate-800/60 text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:border-indigo-500/30 hover:bg-slate-50 dark:hover:bg-slate-900/40 transition-all duration-300"
-              aria-label="GitHub"
-            >
-              <FaGithub size={15} />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://www.linkedin.com/in/ajala-dolapo-756394281/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 inline-flex items-center justify-center rounded-lg border border-slate-200/60 dark:border-slate-800/60 text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:border-indigo-500/30 hover:bg-slate-50 dark:hover:bg-slate-900/40 transition-all duration-300"
-              aria-label="LinkedIn"
-            >
-              <FaLinkedin size={15} />
-            </a>
-          </li>
-          <li>
-            <a
-              href="https://mail.google.com/mail/?view=cm&fs=1&to=supremeajala@gmail.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 inline-flex items-center justify-center rounded-lg border border-slate-200/60 dark:border-slate-800/60 text-slate-600 dark:text-slate-400 hover:text-indigo-600 dark:hover:text-indigo-400 hover:border-indigo-500/30 hover:bg-slate-50 dark:hover:bg-slate-900/40 transition-all duration-300"
-              aria-label="Email"
-            >
-              <FaEnvelope size={15} />
-            </a>
-          </li>
-        </ul>
+          ))}
+          <a href={`mailto:${EMAIL}`}>
+            Email <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+
+      <div className="footer-bottom">
+        <span>© {new Date().getFullYear()} DOLAPO AJALA</span>
+        <span>WEB. MOBILE. ON-CHAIN.</span>
+        <a href="#main" className="back-top">
+          Back to the top <span aria-hidden="true">↑</span>
+        </a>
       </div>
     </footer>
   );

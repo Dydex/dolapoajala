@@ -1,37 +1,73 @@
-import { FaUser, FaProjectDiagram } from 'react-icons/fa';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
+import Link from "next/link";
+import { useRouter } from "next/router";
+import { useEffect, useState } from "react";
+import Monogram from "@/components/common/Monogram";
+import ThemeToggle from "@/components/common/ThemeToggle";
+import { NAV_LINKS } from "@/constants";
 
 const Header: React.FC = () => {
+  const [open, setOpen] = useState(false);
   const router = useRouter();
-  const currentPath = router.pathname;
+
+  useEffect(() => {
+    const close = () => setOpen(false);
+    router.events.on("hashChangeStart", close);
+    router.events.on("routeChangeStart", close);
+    return () => {
+      router.events.off("hashChangeStart", close);
+      router.events.off("routeChangeStart", close);
+    };
+  }, [router.events]);
 
   return (
-    <header className="flex justify-center py-4 fixed top-0 left-0 z-50 w-full bg-white/60 dark:bg-slate-950/60 backdrop-blur-xl border-b border-slate-200/50 dark:border-slate-800/50">
-      <div className="flex items-center gap-1.5 bg-slate-100/80 dark:bg-slate-900/80 border border-slate-200/60 dark:border-slate-800/60 p-1.5 rounded-full shadow-inner">
-        <Link 
-          href="/" 
-          className={`flex gap-2 items-center py-2 px-4 rounded-full text-xs font-semibold transition-all duration-300 ${
-            currentPath === '/' 
-              ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/15' 
-              : 'text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-200/40 dark:hover:bg-slate-800/40'
-          }`}
-        >
-          <FaUser size={12} />
-          <span>About</span>
+    <header className="site-header">
+      <a className="skip-link" href="#main">
+        Skip to content
+      </a>
+      <nav className="site-nav" aria-label="Main navigation">
+        <Link className="wordmark" href="/" aria-label="Dolapo Ajala — home">
+          <Monogram />
+          <span>
+            dolapo<span className="wordmark-dot">.</span>
+            <small>AJALA</small>
+          </span>
         </Link>
 
-        <Link 
-          href="/projects" 
-          className={`flex gap-2 items-center py-2 px-4 rounded-full text-xs font-semibold transition-all duration-300 ${
-            currentPath === '/projects' 
-              ? 'bg-indigo-600 text-white shadow-md shadow-indigo-600/15' 
-              : 'text-slate-600 dark:text-slate-300 hover:text-indigo-600 dark:hover:text-indigo-400 hover:bg-slate-200/40 dark:hover:bg-slate-800/40'
-          }`}
-        >
-          <FaProjectDiagram size={12} />
-          <span>Projects</span>
-        </Link>
+        <div className="desktop-links">
+          {NAV_LINKS.map((link, i) => (
+            <Link key={link.href} className="nav-link" href={link.href}>
+              <sup>0{i + 1}</sup>
+              {link.label}
+            </Link>
+          ))}
+        </div>
+
+        <div className="nav-actions">
+          <ThemeToggle />
+          <Link className="nav-contact" href="/#contact">
+            Let&apos;s talk <span aria-hidden="true">↗</span>
+          </Link>
+          <button
+            type="button"
+            className="menu-toggle"
+            aria-label={open ? "Close menu" : "Open menu"}
+            aria-expanded={open}
+            aria-controls="mobile-navigation"
+            onClick={() => setOpen((v) => !v)}
+          >
+            <span aria-hidden="true">+</span>
+          </button>
+        </div>
+      </nav>
+
+      <div id="mobile-navigation" className="mobile-navigation" hidden={!open}>
+        {[...NAV_LINKS, { label: "Let’s talk", href: "/#contact" }].map((link, i) => (
+          <Link key={link.href} href={link.href} onClick={() => setOpen(false)}>
+            <span>0{i + 1}</span>
+            {link.label}
+            <span aria-hidden="true">↗</span>
+          </Link>
+        ))}
       </div>
     </header>
   );
