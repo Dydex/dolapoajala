@@ -76,11 +76,12 @@ const About: React.FC = () => {
           <span className="micro-label">HEY, I’M DOLAPO.</span>
           <p>
             I build clean, intuitive, and interactive products across web, mobile, and on-chain. React, Next.js,
-            React Native, and TypeScript on the front, backed by REST APIs on Node.js, Express, and PostgreSQL.
+            React Native, and TypeScript on the front, backed by REST APIs and Supabase, Node.js, and Express.
           </p>
           <p>
             On the blockchain side, I design and ship secure Solidity contracts with Foundry and Hardhat, trained at
-            Web3Bridge. Currently expanding into Rust and the intersection of AI and Web3.
+            Web3bridge and built a Uniswap v4 hook as an Atrium Academy fellow. Currently exploring the intersection of
+            AI and Web3.
           </p>
           <a href="#experience" className="text-link">
             See where I’ve worked <span aria-hidden="true">↘</span>
@@ -118,7 +119,7 @@ const About: React.FC = () => {
           <strong>{String(PROJECTSAMPLE.length).padStart(2, "0")}</strong> selected projects
         </span>
         <span>INTERFACES. APPS. PROTOCOLS.</span>
-        <span>Now exploring Rust + AI ↗</span>
+        <span>Now exploring AI + Web3 ↗</span>
       </div>
     </section>
   );
